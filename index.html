@@ -1,0 +1,102 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#008000">
+  <title>FreshTaker — Frescura a tu alcance</title>
+  <style>
+    :root { --green: #008000; --yellow: #ffde21; --ink: #17351b; --cream: #fffdf2; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; color: var(--ink); background: var(--cream); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .page { position: relative; min-height: 100vh; overflow: hidden; background: radial-gradient(ellipse at 78% 85%, #ffde2138 0, transparent 31%), var(--cream); }
+    header { height: 104px; max-width: 1200px; margin: auto; padding: 18px 34px; display: flex; align-items: center; justify-content: space-between; }
+    .about { color: var(--green); font-weight: 700; text-decoration: none; border: 2px solid var(--green); padding: 11px 21px; border-radius: 999px; transition: .2s ease; }
+    .about:hover { background: var(--green); color: white; }
+    .brand { display: block; width: 190px; height: auto; border-radius: 8px; }
+    main { max-width: 1200px; min-height: calc(100vh - 104px); margin: auto; padding: 30px 34px 80px; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 35px; }
+    .copy { position: relative; z-index: 1; padding: 15px 0 35px; }
+    .eyebrow { display: inline-flex; gap: 9px; align-items: center; margin: 0 0 22px; color: var(--green); font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 800; }
+    .eyebrow::before { content: ""; width: 26px; height: 3px; background: var(--yellow); border-radius: 3px; }
+    h1 { max-width: 650px; margin: 0; font-size: clamp(3.2rem, 7vw, 6.4rem); line-height: .98; letter-spacing: -.065em; color: var(--green); }
+    h1 span { color: #d4a900; }
+    .intro { max-width: 470px; margin: 25px 0 32px; color: #536756; font-size: 1.12rem; line-height: 1.7; }
+    .download { display: inline-flex; align-items: center; gap: 11px; padding: 16px 25px; border: 0; border-radius: 999px; background: var(--green); color: white; text-decoration: none; font-weight: 800; font-size: 1rem; box-shadow: 0 10px 24px #0080002b; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+    .download:hover { transform: translateY(-3px); box-shadow: 0 14px 28px #00800038; }
+    .download svg { width: 19px; height: 19px; }
+    .visual { min-height: 530px; display: grid; place-items: center; position: relative; }
+    .sun { position: absolute; width: 410px; height: 410px; border-radius: 50%; background: var(--yellow); opacity: .92; }
+    .leaf { position: absolute; width: 250px; height: 250px; right: -80px; bottom: 2px; border-radius: 90% 0 90% 0; background: #00800012; transform: rotate(-18deg); }
+    .phone { position: relative; width: 265px; height: 510px; padding: 9px; border: 8px solid #19371e; border-radius: 42px; background: #19371e; box-shadow: 0 30px 70px #14371835; transform: rotate(5deg); }
+    .screen { height: 100%; border-radius: 28px; overflow: hidden; background: #fbfff5; position: relative; padding: 25px 17px; }
+    .notch { position: absolute; width: 83px; height: 20px; top: 0; left: 50%; transform: translateX(-50%); border-radius: 0 0 14px 14px; background: #19371e; }
+    .status { display: flex; justify-content: space-between; font-size: 9px; font-weight: 800; margin: 3px 3px 24px; color: #18391c; }
+    .app-mark { display: flex; align-items: center; gap: 8px; color: var(--green); font-size: 12px; font-weight: 900; }
+    .app-icon { width: 27px; height: 27px; border-radius: 9px; background: var(--green); color: var(--yellow); display: grid; place-items: center; font-size: 15px; }
+    .greeting { margin: 27px 0 13px; font-size: 18px; line-height: 1.15; font-weight: 850; color: #18391c; }
+    .search { padding: 11px 12px; border-radius: 12px; background: #eff5e9; color: #81907d; font-size: 9px; }
+    .section-title { margin: 21px 0 11px; font-size: 11px; font-weight: 850; color: #18391c; }
+    .product { display: flex; align-items: center; gap: 10px; padding: 9px; border-radius: 15px; background: white; margin-bottom: 9px; box-shadow: 0 5px 15px #19371e0d; }
+    .produce { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; font-size: 23px; background: #fff4cb; }
+    .product:nth-of-type(2) .produce { background: #e5f1dc; }
+    .product-copy { flex: 1; font-size: 9px; font-weight: 800; color: #29452d; }
+    .product-copy small { display: block; margin-top: 4px; color: #829080; font-size: 8px; font-weight: 500; }
+    .price { font-size: 9px; font-weight: 900; color: var(--green); }
+    .nav { position: absolute; bottom: 10px; left: 17px; right: 17px; display: flex; justify-content: space-around; padding: 10px 4px 4px; border-top: 1px solid #edf1e8; color: #829080; font-size: 14px; }
+    .nav span:first-child { color: var(--green); }
+    .spark { position: absolute; z-index: 2; color: var(--green); font-size: 30px; }
+    .spark.one { top: 78px; right: 40px; }.spark.two { bottom: 67px; left: 48px; color: #d4a900; font-size: 22px; }
+    @media (max-width: 760px) {
+      header { height: 86px; padding: 15px 20px; }
+      .brand { width: 145px; }
+      .about { padding: 9px 15px; font-size: .9rem; }
+      main { min-height: auto; padding: 35px 24px 65px; grid-template-columns: 1fr; gap: 10px; }
+      .copy { padding-bottom: 0; }
+      h1 { font-size: clamp(3.1rem, 14vw, 5rem); }
+      .intro { font-size: 1rem; margin: 20px 0 25px; }
+      .visual { min-height: 480px; }
+      .sun { width: 330px; height: 330px; }
+      .phone { transform: scale(.88) rotate(5deg); }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="about" href="acerca.html">Acerca de</a>
+      <img class="brand" src="assets/logo-freshtaker.jpeg" alt="Logo de FreshTaker">
+    </header>
+    <main>
+      <section class="copy" aria-labelledby="headline">
+        <p class="eyebrow">Frescura que te acompaña</p>
+        <h1 id="headline">Lo fresco,<br><span>más cerca.</span></h1>
+        <p class="intro">Descubre una forma sencilla de encontrar productos frescos y llevarlos contigo, estés donde estés.</p>
+        <a class="download" href="#" aria-label="Descargar FreshTaker (botón de muestra)" onclick="return false">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Descargar
+        </a>
+      </section>
+      <section class="visual" aria-label="Vista previa de FreshTaker en un teléfono móvil">
+        <div class="sun"></div><div class="leaf"></div>
+        <span class="spark one" aria-hidden="true">✳</span><span class="spark two" aria-hidden="true">✦</span>
+        <div class="phone">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="status"><span>9:41</span><span>●●●  ▰</span></div>
+            <div class="app-mark"><span class="app-icon">✿</span> FRESHTAKER</div>
+            <h2 class="greeting">¡Hola!<br>¿Qué se te antoja?</h2>
+            <div class="search">⌕ &nbsp; Busca frutas, verduras...</div>
+            <p class="section-title">Favoritos frescos</p>
+            <div class="product"><div class="produce">🍓</div><div class="product-copy">Fresas frescas<small>Del campo a tu mesa</small></div><div class="price">$4.500</div></div>
+            <div class="product"><div class="produce">🥑</div><div class="product-copy">Aguacate<small>Cosecha seleccionada</small></div><div class="price">$3.200</div></div>
+            <p class="section-title">Para ti esta semana</p>
+            <div class="product"><div class="produce">🥭</div><div class="product-copy">Mango dulce<small>Fresco y local</small></div><div class="price">$2.800</div></div>
+            <div class="nav"><span>⌂</span><span>⌕</span><span>♡</span><span>♙</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

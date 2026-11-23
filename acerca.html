@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#008000">
+  <title>Acerca de FreshTaker</title>
+  <style>
+    :root { --green: #008000; --yellow: #ffde21; --ink: #18351d; --cream: #fffdf2; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; color: var(--ink); background: radial-gradient(ellipse at 88% 12%, #ffde2138 0, transparent 28%), var(--cream); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    header { max-width: 1160px; margin: auto; padding: 24px 30px; display: flex; align-items: center; justify-content: space-between; }
+    .back { text-decoration: none; color: var(--green); font-weight: 750; display: inline-flex; align-items: center; gap: 8px; }
+    .back:hover { text-decoration: underline; }
+    .brand { width: 170px; height: auto; border-radius: 7px; }
+    main { width: min(100% - 40px, 880px); margin: 28px auto 80px; }
+    .story { padding: clamp(26px, 6vw, 60px); border: 1px solid #e7eddf; border-radius: 28px; background: #fff; box-shadow: 0 18px 55px #18351d0c; text-align: center; }
+    .eyebrow { margin: 0 0 12px; color: var(--green); font-weight: 800; text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; }
+    h1 { margin: 0 0 22px; color: var(--green); font-size: clamp(2.5rem, 7vw, 4.4rem); letter-spacing: -.055em; line-height: 1; }
+    .rule { width: 58px; height: 5px; border: 0; border-radius: 9px; margin: 0 auto 26px; background: var(--yellow); }
+    .story p { max-width: 720px; margin: 0 auto 20px; font-size: clamp(1rem, 2vw, 1.12rem); line-height: 1.85; color: #526454; text-align: left; }
+    .story p:last-child { margin-bottom: 0; }
+    figure { margin: 34px auto 0; padding: 12px; border-radius: 22px; background: white; box-shadow: 0 16px 44px #18351d12; }
+    figure img { display: block; width: 100%; height: auto; border-radius: 13px; }
+    .video { display: flex; justify-content: center; margin: 30px auto 0; }
+    .video a { display: inline-flex; align-items: center; gap: 11px; border-radius: 999px; padding: 15px 23px; color: #fff; background: var(--green); text-decoration: none; font-weight: 800; box-shadow: 0 9px 22px #00800028; transition: transform .2s ease; }
+    .video a:hover { transform: translateY(-2px); }
+    .play { width: 23px; height: 23px; border-radius: 50%; background: var(--yellow); color: var(--green); display: grid; place-items: center; font-size: 11px; padding-left: 2px; }
+    .team { margin: 58px auto 0; text-align: center; }
+    .team h2 { margin: 0 0 8px; color: var(--green); font-size: clamp(1.8rem, 4vw, 2.5rem); letter-spacing: -.04em; }
+    .team-intro { margin: 0 0 25px; color: #647365; }
+    .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .member { padding: 20px 16px 17px; border: 1px solid #e7eddf; border-radius: 20px; background: #fff; box-shadow: 0 12px 32px #18351d0b; }
+    .member img { display: block; width: 140px; height: 140px; margin: 0 auto 15px; border: 5px solid #f2f7eb; border-radius: 50%; object-fit: cover; background: #eff5e9; }
+    .member h3 { margin: 0 0 13px; color: var(--ink); font-size: 1rem; }
+    .linkedin { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; background: #0a66c2; color: white; text-decoration: none; font-family: Arial, sans-serif; font-size: 19px; font-weight: 800; letter-spacing: -.08em; }
+    .linkedin:hover { background: #084f96; transform: translateY(-2px); }
+    @media (max-width: 650px) { .team-grid { grid-template-columns: 1fr; max-width: 320px; margin: auto; } }    @media (max-width: 560px) { header { padding: 20px; }.brand { width: 135px; } main { width: min(100% - 28px, 880px); margin-top: 12px; }.story { border-radius: 20px; }.story p { line-height: 1.72; } figure { padding: 7px; border-radius: 15px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="back" href="index.html" aria-label="Volver a FreshTaker">← <span>Volver al inicio</span></a>
+    <img class="brand" src="assets/logo-freshtaker.jpeg" alt="Logo de FreshTaker">
+  </header>
+  <main>
+    <article class="story">
+      <p class="eyebrow">Nuestra historia y propósito</p>
+      <h1>FreshTaker</h1>
+      <hr class="rule">
+      <p>Somos un equipo de innovadores de la Institución Universitaria Pascual Bravo, conformado por Ana Paulina Hernández, James Ramiro Mayora y Valentina Calle Bermúdez. Comprometidos con transformar la manera en que los hogares gestionan sus alimentos.</p>
+      <p>Nacimos como respuesta a una problemática silenciosa pero devastadora: solo en Colombia, las familias desperdician 1,53 millones de toneladas de comida al año (el 15,6 % del total nacional), lo que se traduce en una pérdida directa para la economía del hogar y un grave impacto ambiental.</p>
+      <p>Por ello, creamos una solución digital inteligente que organiza el inventario de tu nevera y despensa mediante un sistema de alertas tipo semáforo y notificaciones oportunas (incluso vía WhatsApp), conectando los productos próximos a vencer con un catálogo de más de 2.000 recetas prácticas. Nuestro propósito es simple pero poderoso: empoderar a las familias y trabajadores para que ahorren dinero, optimicen su tiempo en la cocina y reduzcan el desperdicio alimentario desde casa.</p>
+    </article>
+    <figure>
+      <img src="assets/desperdicio-alimentos.jpeg" alt="Infografía sobre el desperdicio de alimentos en Colombia y el mundo">
+    </figure>
+    <div class="video">
+      <a href="https://youtu.be/rT5y5qApjsA" target="_blank" rel="noopener noreferrer"><span class="play" aria-hidden="true">▶</span> Ver video de FreshTaker</a>
+    </div>
+    <section class="team" aria-labelledby="team-title">
+      <h2 id="team-title">Nuestro equipo</h2>
+      <p class="team-intro">Conoce a las personas detrás de FreshTaker.</p>
+      <div class="team-grid">
+        <article class="member">
+          <img src="assets/perfil1.jpeg" alt="Foto de Ana Paulina Hernández">
+          <h3>Ana Paulina Hernández</h3>
+          <a class="linkedin" href="https://www.linkedin.com/in/paulina-hern%C3%A1ndez-1842a5441/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Ana Paulina Hernández">in</a>
+        </article>
+        <article class="member">
+          <img src="assets/perfil2.jpeg" alt="Foto de James Ramiro Mayora">
+          <h3><a href="mailto:james.mayorga183@pascualbravo.edu.co" style="color: inherit; text-decoration: none;">James Ramiro Mayora</a></h3>
+        </article>
+        <article class="member">
+          <img src="assets/perfil3.jpeg" alt="Foto de Valentina Calle Bermúdez">
+          <h3>Valentina Calle Bermúdez</h3>
+          <a class="linkedin" href="https://www.linkedin.com/in/valentina-calle-bermudez-0b6141437/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Valentina Calle Bermúdez">in</a>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
+
